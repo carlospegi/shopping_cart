@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+
 
 function App() {
+
+  const options = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': '8defe9cfe6mshb1e59283de457a7p14cd77jsn40ad3fa58812',
+      'X-RapidAPI-Host': 'taobao-api.p.rapidapi.com'
+    }
+  };
+  
+  fetch('https://taobao-api.p.rapidapi.com/api?api=item_search&page_size=40&q=shoes', options)
+    .then(response => return  response.json()
+
+    )
+    .then(response => console.log(response))
+    .catch(err => console.error(err));
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+<h2>hola</h2>
     </div>
   );
 }
