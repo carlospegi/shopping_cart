@@ -1,5 +1,6 @@
 import React from 'react'
 import Nike from '../../images/Nike.jpg'
+import {Link} from 'react-router-dom'
 const Header = () => {
     return (
 
@@ -13,10 +14,10 @@ const Header = () => {
 
             <ul>
                 <li>
-                    <a href="!#">HOME</a>
+                    <Link to="/">HOME</Link>
                 </li>
                 <li>
-                    <a href="!#">PRODUCTS</a>
+                   <Link to="/products" >Products</Link>
                 </li>
             </ul>
             <div className='cart' >
