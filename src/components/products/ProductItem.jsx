@@ -1,22 +1,26 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { DataContext } from '../../context/DataProvider'
+import {Link} from 'react-router-dom'
+const ProductItem = ({id, title, price, image, category}) => {
 
-const ProductItem = ({ title, price, image, category}) => {
+const context = useContext(DataContext);
+const addCart = context.addCart
   return (
     <div className="product">
-    <a href="!#">
+    <Link to={`/producto/${id}`}>
       <div className="product__img">
-        <img src={image} alt="" />
+        <img src={image} alt="img" />
       </div>
-    </a>
+    </Link>
     <div className="product__footer">
       <h1>{title}</h1>
       <p>{category}</p>
-      <p className='price' >{price}</p>
+      <p className='price' >$ {price}</p>
     </div>
     <div className="button">
-      <button className='btn' >Add</button>
+      <button className='btn' onClick={()=> addCart(id)} >Add Cart</button>
       <div>
-        <a href="!#" className='btn'>View</a>
+        <Link to={`/product/${id}`}className='btn'>View</Link>
       </div>
     </div>
   </div> 

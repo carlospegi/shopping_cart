@@ -1,7 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Nike from '../../images/Nike.jpg'
 import {Link} from 'react-router-dom'
+import { DataContext } from '../../context/DataProvider'
+
 const Header = () => {
+
+    const context = useContext(DataContext);
+    const [menu, setMenu]= context.menu
+const [cart] = context.cart
+const toggleMenu=()=>{
+    setMenu(!menu)
+}
     return (
 
         <header>
@@ -20,9 +29,9 @@ const Header = () => {
                    <Link to="/products" >Products</Link>
                 </li>
             </ul>
-            <div className='cart' >
+            <div className='cart-'  onClick={toggleMenu}>
                 <box-icon name='cart' ></box-icon>
-                <span className='item__total' >0</span>
+                <span className='item__total' >{cart.length}</span>
             </div>
 
         </header>
