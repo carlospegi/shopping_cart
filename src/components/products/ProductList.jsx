@@ -10,7 +10,7 @@ const [products ]= context.products
   return (
     <>
       <h1 className='title' >Products</h1>
-      <div className='products' >
+      <div className=' py-10 mx-auto gap-2 border md:grid grid-cols-3  ' >
 {
 products.map(item=>(
 
